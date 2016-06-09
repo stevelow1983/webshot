@@ -18,6 +18,10 @@ module Webshot
       }
     end
 
+    def resize_window(width, height)
+      page.driver.resize(width, height)
+    end
+
     def start_session(&block)
       Capybara.reset_sessions!
       Capybara.current_session.instance_eval(&block) if block_given?
